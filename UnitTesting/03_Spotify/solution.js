@@ -109,7 +109,7 @@ describe("Spotify",function(){
         it("shuold return songs in specific format",function(){
             let songs = new Spotify();
             songs.downloadSong("ivan","qka pesen","lelee");
-            assert.deepEqual(songs.downloadSong("ivan","kurvi sbogom","nqma veche jipove"),{"allSongs":{"ivan":{"rate":0,"votes":0,"songs":["qka pesen" +" - "+"lelee","kurvi sbogom" +" - "+ "nqma veche jipove"]}}});
+            assert.deepEqual(songs.downloadSong("ivan","diamond","nqma veche jipove"),{"allSongs":{"ivan":{"rate":0,"votes":0,"songs":["qka pesen" +" - "+"lelee","diamond" +" - "+ "nqma veche jipove"]}}});
         })
     })
 
@@ -133,9 +133,9 @@ describe("Spotify",function(){
         it("should return songs in specific format",function(){
             let songs = new Spotify();
             songs.downloadSong("ivan","qka pesen","lelee");
-            songs.downloadSong("gosho","kurvi sbogom","nqma veche jipove")
+            songs.downloadSong("gosho","diamond","call me maybe")
 
-            assert.equal(songs.songsList,"qka pesen - lelee\n" + "kurvi sbogom - nqma veche jipove");
+            assert.equal(songs.songsList,"qka pesen - lelee\n" + "diamond - call me maybe");
 
         })
 
@@ -150,7 +150,7 @@ describe("Spotify",function(){
         it("should rate the current artist",function(){
             let songs = new Spotify();
             songs.downloadSong("ivan","qka pesen","lelee");
-            songs.downloadSong("gosho","kurvi sbogom","nqma veche jipove")
+            songs.downloadSong("gosho","diamond","call me maybe")
     
            assert.equal(songs.rateArtist("test"),`The test is not on your artist list.`)
         })
